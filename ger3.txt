@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+
+int main ()
+{	setlocale(LC_ALL, "portuguese");
+	srand(time(0));
+	float final[3];
+	float  valor, a, somatoria=0, pontuacao=0, d;
+	int rodada=0, limite;
+	
+	printf("##### JOGO DOS LIMITES #####");
+	printf("\nRegra: O limite escolhido tem que ser entre 3 e 18");
+	final[0] = 0;
+	do
+	{
+	printf("\n\nEscolha o limite da rodada numero %d: ", rodada+1);
+	scanf("%d", &limite);
+	a=1;
+	do
+	{	valor = rand()%limite;
+		printf("\nValor %.f: %.f", a, valor);
+		somatoria += valor;
+		a++;
+	}while(a<=3);
+	printf("\nValor somado dos números sorteados: %.f", somatoria);
+
+	if(limite <= 11)
+	{	if(somatoria <= limite)
+		{pontuacao = (11 - somatoria); 	}
+		if(somatoria > limite)
+		{	pontuacao = (11 - somatoria);
+			if(pontuacao > 0)
+			{	pontuacao = -pontuacao;	}
+		}
+	}
+	else
+	{	d = limite - 10;
+		if(somatoria > limite)
+		{	pontuacao -= d*(somatoria - limite);		}
+		else if(somatoria <= limite)
+		{	pontuacao += ((limite - somatoria)/d)+1;		}
+	}
+	final[rodada] = pontuacao;
+	printf("\nPontuação obtida da rodada número %d: %.2f", rodada+1, pontuacao);
+	rodada++;
+	somatoria = 0;
+	pontuacao = 0;
+	}while(rodada<3);
+
+	for(rodada=0; rodada < 3; rodada++)
+	{ somatoria += final[rodada];	}
+
+	printf("\n\nPontuação final do jogador: %.2f", somatoria);
+	
+	return 0;
+	system("pause");
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{	
+	int vet[] = {0,1,2,4,8,16,1025};
+	int x=0, i;
+	unsigned char *varrer;
+	
+	varrer = (unsigned char*)&vet;
+	
+	for(i=0; i<sizeof(vet); i++)
+	{	if(*(varrer+i) == 0x00)
+		{	x++;	}	}
+	printf("De %d bytes investigados, %d foram contados.", sizeof(vet), x);
+	
+	return 0;
+}

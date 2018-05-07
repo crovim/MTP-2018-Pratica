@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main ()
+{	srand(time(0));
+	int vet[10000], num, somatoria=0, i=0;
+	float u;
+	do
+	{	system("cls");
+		printf("Digite um valor inteiro positivo: ");
+		scanf("%d", &num); }while(num<0);
+	while(i<10000)
+	{	vet[i] = rand()%num;
+		if(vet[i] != '\0')
+			{	somatoria += vet[i];	}
+		i++;	}
+	printf("\nValor da somatoria: %d", somatoria);
+	u = (somatoria)/10000;
+	printf("\n\nResultado da media: %.2f\n", u);
+	
+	system("pause");
+	return 0;
+}

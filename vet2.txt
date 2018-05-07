@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{	int vet[10], vet1[10], i=0, j=9;
+	
+	do
+	{	printf("Digite o valor numero %d do vetor: ", i+1);
+		scanf("%d", &vet[i]);
+		i++;
+	}while(i<10);
+	system("cls");
+	printf("Numeros digitados: ");
+	for(i=0; i<10 ; i++, j--)
+	{	printf(" %d", vet[i]);
+		vet1[j]	= vet[i];	}
+	j = 0;
+	printf("\nNumeros invertidos: ");
+	while(j<10)
+	{	printf(" %d", vet1[j]);	j++;	}
+	printf("\n");
+	
+	system("pause");
+	return 0;
+}

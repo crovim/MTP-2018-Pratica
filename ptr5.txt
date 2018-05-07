@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main()
+{	srand(time(0));
+	int vet[1000], i, max, num, cont=0;
+	unsigned char *p, *q, *f;
+
+	
+//	printf("Digite um valor maximo para os numeros que serao sortiados:");
+//	scanf("%d", &max);
+//	for(i=0;i<1000;i++){ vet[i] = rand()%max+1; printf("%d ", vet[i]);	}
+	do{	system("cls");
+	printf("\nEscolhe um valor de 0 a 255:");
+	scanf("%d", &num);	}while(num < 0 || num > 255);
+	for(i=0;i<1000;i++){ vet[i] = rand()%num+1;	}
+	p = (unsigned char*)&vet;
+	q = (unsigned char*)&vet[0];
+	printf("\nOs bits nos seguintes enderecos: ");
+	for(i=0; i<sizeof(vet); i++)
+	{	if(*(p+i) == num)
+		{	cont++;
+			printf("\n0x%p : %d", &vet[i], num);		}	}
+	if(i != sizeof(vet)){	i++;	}
+	f = (unsigned char*)&vet[i];
+	printf("\nEsses %d bytes sao iguais a %d e estao localizados entre o endereco: %p ate o %p na memoria.", cont, num, &q, &f);
+	
+	return 0;
+}

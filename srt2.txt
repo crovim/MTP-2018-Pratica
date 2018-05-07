@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+	int i=0, tamanho, digitos=0, vogal=0, consoante=0, espacos=0, k=0, j=0;
+	char vet[256], vetvog[5] = {65, 69, 73, 79, 85};
+	
+	printf("Digite uma frase: ");
+	fgets(vet, 256, stdin);
+	tamanho = strlen(vet);
+	for(i=0; i<tamanho; i++)
+	{	if(vet[i] >= 96 && vet[i] <= 122)
+		{	vet[i] -= 32;	}
+	}	
+	for(i=0; i<tamanho; i++)
+	{	if(vet[i] >= 48 && vet[i] <= 57)
+		{	digitos++;	}
+		if(vet[i] >= 65 && vet[i] <= 90)
+		{	for(k=0; k<5; k++)
+			{	if(vet[i] == vetvog[k])
+				{	vogal++;	}
+				if(vet[i] != vetvog[k] && vet[i] != ' ')
+				{	if(vet[i] >= 65 && vet[i] <= 90)
+					{	j++;
+						if(j == 5)
+						{	consoante++;	}	
+					}
+				}	
+			}
+		}
+		j=0;
+		if(vet[i] == ' ')
+		{	espacos++;		}
+	}
+	printf("\nV:%d; C:%d; D:%d; E:%d", vogal, consoante, digitos, espacos);
+	
+	return 0;
+}

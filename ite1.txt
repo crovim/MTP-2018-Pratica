@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	long long int valor, x=1;
+	int i;
+	
+	printf("Digite um valor para fazer: ");
+	scanf("%lld", &valor);
+	
+	for(i=1; i<=valor; i++)
+	{	x *= i;		}
+	printf("\nFatorial de %lld = %lld", valor, x);
+	
+	return 0;
+	system("pause");
+}

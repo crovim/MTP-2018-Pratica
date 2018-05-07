@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{	char frase[1000];
+	int i, j=0;
+	printf ("Digite uma frase: \n");
+	fgets(frase, 1000, stdin);
+	j = strlen(frase);
+	printf("\nTamanho : %d", j);
+	printf("\n\n");
+	
+	for(i=0; i<j; i++)
+	{	if(frase[i] >= 65 && frase[i] <= 77)
+		{	frase[i] += 13;		}
+		else if(frase[i] >= 78 && frase[i] <= 90)
+		{	frase[i] -= 13;		}
+		else if(frase[i] >= 97 && frase[i] <= 109)
+		{	frase[i] += 13;		}
+		else if(frase[i] >= 110 && frase[i] <= 122)
+		{	frase[i] -= 13;		}
+	}
+	
+	printf ("\n%s", frase);
+}

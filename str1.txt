@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main ()
+{	int i=0, tamanho;
+	char vet[256];
+	
+	printf("Digite uma frase:");
+	fgets(vet, 256, stdin);
+	
+	tamanho = strlen(vet);
+
+	for(i=0; i<tamanho; i++)
+	{	if(vet[i] > 96)
+		{	vet[i] -= 32;	}
+	}
+	printf("Tamanho da string: %d\n", tamanho-1);
+	
+	if(strncmp (vet, "BOM DIA", 7) == 0)
+	{	printf("Bom dia pra voce tambem!");	}
+	if(strncmp (vet, "BOM DIA", 7) != 0)
+	{	printf("Voce quis dizer: %sEra isso mesmo?", vet);	}
+	if(strncmp (vet, "TCHAU!! FUI!", 12) == 0)
+	{	printf("Saindo? Que pena..");	}
+	getchar();
+	return 0;
+}

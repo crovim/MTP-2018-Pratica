@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	long long int valor, base, exp;
+	int i;
+	
+	printf("Digite uma base e um expoente: ");
+	scanf("%lld %lld", &base, &exp);
+	valor = base;
+	for(i=1; i<exp; i++)
+	{	base = base*valor;		}
+	printf("\n%lld elevado a %lld = %lld", valor, exp, base);
+	
+	return 0;
+	system("pause");
+}

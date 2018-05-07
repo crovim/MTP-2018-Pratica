@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	int valor, i=1, cont=0;
+	
+	printf("Digite um valor qualquer: ");
+	scanf("%d", &valor);
+	do
+	{	if(valor%i==0)
+		{	cont++;		}
+		i++;
+	}while(i<=valor);
+	if(cont == 2)
+	{	printf("\nO valor e um numero primo.");	}
+	else
+	{	printf("\nO valor nao e um numero primo."); }
+	
+	return 0;
+	system("pause");
+}

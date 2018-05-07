@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+int main ()
+{
+	float base, altura, area;
+	printf("## Este programa calcula a area de um triangulo a partir de uma base 'x' e uma altura 'y' ##");
+	printf("\n\nDigite o valor para base(x) e altura(y): ");
+	scanf("%f %f", &base, &altura);
+	area = (base*altura)/2;
+	printf("\nArea = %.2f", area);
+	
+	return 0;
+	system("pause");
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{	
+	int vet[] = {0x0F, 0xFF, 0xFFFF, 0xFFFFFF, 0x80000001, 0xFFFFFFFF};
+	unsigned char *varrer, x, i, soma=0;
+	
+	for(i=0; i<sizeof(vet); i++)
+	{	varrer = (unsigned char*)&vet[i];
+		if(*varrer >= 0x01)
+		{	soma ++;	}
+		printf("\nConteudo do byte de numero %d: %d", i+1, *varrer);	}
+	printf("\n\nTotal de bytes investigados : %d ", sizeof(vet));
+	printf("\nTotal de bytes contados com pelo menos um bit igual a 1: %d", soma);
+	
+	return 0;
+}

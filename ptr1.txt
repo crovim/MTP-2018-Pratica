@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{	
+	unsigned int x = 0xFACA8421;
+	unsigned char *y;
+	int i=0;
+	
+	printf("Variavel: %X", x);
+	printf("\nEndereco: %p", &x);
+	printf("\nVariavel em base decimal: %d", x);
+	printf("\nVariavel em decimal unsigned: %u", x);
+	
+	y = (unsigned char*)&x;
+	
+	do
+	{	printf("\nEndereco: %p	|	Valor em decimal: %u	|	Valor em hexadecimal: %X", y+i, *(y+i), *(y+i));
+		i++;	}while(i<sizeof(x));
+	return 0;
+}

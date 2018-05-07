@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{	float num1, num2, *end1, *end2, soma, *end3;
+	
+	printf("Digite dois numeros reais: ");
+	scanf("%f %f", &num1, &num2);
+	
+	end1 = &num1;
+	end2 = &num2;
+	
+	printf("\n1 Numero: %.2f \nEndereco do primeiro numero: %p", num1, end1);
+	printf("\n2 Numero: %.2f \nEndereco do segundo numero: %p", num2, end2);
+	
+	soma = num1 + num2;
+	end3 = &soma;
+	
+	printf("\nA soma dos valores eh: %.2f", soma);
+	printf("\nO endereco da soma eh: %.2p", end3);	
+	
+	return 0;
+}

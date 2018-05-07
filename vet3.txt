@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{	int vet[10], i=0, soma=0, mult=1;
+	
+	do
+	{	printf("Digite o valor numero %d do vetor: ", i+1);
+		scanf("%d", &vet[i]);
+		i++;
+	}while(i<10);
+	for(i=0; i<10; i++)
+	{	soma += vet[i];	}
+	printf("\nSoma dos valores: %d", soma);
+	for(i=0; i<10; i++)
+	{	mult *= vet[i];	}
+	printf("\nMultiplicacao dos valores: %d\n", mult);
+	
+	system("pause");
+	return 0;
+}

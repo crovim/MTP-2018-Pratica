@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+	int i, tamanho, num;
+	char vet[256];
+	
+	printf("Digite uma frase: ");
+	fgets(vet, 256, stdin);
+	tamanho = strlen(vet);
+	for(i=0; i<tamanho; i++)
+	{	if(vet[i] == 'A'){vet[i] = '4';}
+		else if(vet[i] == 'A' || vet[i] == 'a'){vet[i] = '4';}
+		else if(vet[i] == 'E' || vet[i] == 'e'){vet[i] = '3';}
+		else if(vet[i] == 'I' || vet[i] == 'i'){vet[i] = '1';}
+		else if(vet[i] == 'O' || vet[i] == 'o'){vet[i] = '0';}
+		else if(vet[i] == 'S' || vet[i] == 's'){vet[i] = '5';}
+		else if(vet[i] == 'G' || vet[i] == 'g')
+		{	printf("\nPara a letra 'G', voce deseja utilizar o '6' ou o '9'? ");
+			scanf("%d", &num);
+			if(num == 6){vet[i] = '6';}
+			if(num == 9){vet[i] = '9';}	}
+	}
+	printf("\n%s", vet);
+	
+	
+	return 0;
+}
