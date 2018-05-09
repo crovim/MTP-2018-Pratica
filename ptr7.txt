@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{	int str[4], i=0;
+	char *p;
+			do
+			{	printf("Digite um numero: ");
+				scanf("%d", &str[i]);
+				i++;
+			}while(i<4);
+			p = (char*)&str;
+			for(i=0; i<sizeof(str); i++)
+			{	printf("%c", *(p+i));		}
+
+	return 0;
+}
