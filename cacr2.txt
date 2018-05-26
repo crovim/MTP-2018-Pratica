@@ -1,0 +1,37 @@
+#include  <stdio.h>
+
+void raizes(int delta, int a, int b, int c)
+{	int raiz1, raiz2, raiz_quad, i;
+	
+	for(i=0; i<=delta; i++)
+	{	if(i*i == delta)
+		{	raiz_quad = i;	break;  }
+	}
+	
+	if(delta > 0)
+	{	raiz1 = (-b + raiz_quad)/(2*a);
+		raiz2 = (-b - raiz_quad)/(2*a);	
+		printf("\nRaiz1 = %d	Raiz2 = %d", raiz1, raiz2);
+	}
+	else if(delta == 0)
+	{	raiz1 = -b/(2*a);
+		raiz2 = raiz1;
+		printf("\nRaiz1 = %d	Raiz2 = %d", raiz1, raiz2);
+	}
+	else if(delta < 0)
+	{	printf("\nRaiz1 = NAN	Raiz2 = NAN");
+		printf("\nNao existe raizes real");
+	}	
+}
+
+int  main()
+{	int a, b, c, delta;
+	
+	printf("Digite os coeficientes a, b e c: ");
+	scanf("%d %d %d", &a, &b, &c);
+	printf("\nY : (%d)x^2+(%d)x+%d", a, b, c);
+	delta = (b*b)-4*(a*c); 
+	raizes(delta, a, b, c);
+	
+	return 0;
+}

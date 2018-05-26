@@ -1,0 +1,34 @@
+#include  <stdio.h>
+#include  <stdlib.h>
+
+void  imprimir(int x)  
+{	int  r, i;
+	for(i=1; i<=20; i++)
+	{	if(x==1)
+		{	if(i%2!=0)
+			{	printf("%d ", i);	}
+		}
+		if(x==2)
+		{	if(i%2==0)
+			{	printf("%d ", i);	}
+		}	
+	}	
+}
+
+int  main()
+{	int x;
+	
+	printf("Digite: \n1 - Imprimir os impares \n2 - Imprimir os pares \nSua opcao eh: ");
+	scanf("%d", &x);
+	switch (x)
+	{	case 1:
+			imprimir(x);
+			break;
+		case 2:
+			imprimir(x);
+			break;
+		default:
+			break;
+	}
+	return 0;
+}
